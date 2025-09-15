@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "Matte Clay", "brand": "Lojo", "price": 18.00, "image": "images/product-clay.jpg" },
+    { "id": 2, "name": "Sea Salt Spray", "brand": "Lojo", "price": 16.00, "image": "images/product-seasalt.jpg" },
+    { "id": 3, "name": "Beard Oil", "brand": "Lojo", "price": 20.00, "image": "images/product-beard.jpg" }
+  ]
+  

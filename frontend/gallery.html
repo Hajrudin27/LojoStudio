@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Lojo Barbers</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div data-include="header"></div>
+
+  <main class="container pad">
+    <h1>Gallery</h1>
+    <p class="muted">A few favorites from recent cuts, fades, and beard work.</p>
+
+    <div class="gallery-grid" id="gallery">
+      <!-- Add your images to /images/gallery and list them here -->
+      <a href="images/gallery/cut1.jpg"><img src="images/gallery/cut1.jpg" alt="Skin fade with texture" /></a>
+      <a href="images/gallery/cut2.jpg"><img src="images/gallery/cut2.jpg" alt="Classic scissor cut" /></a>
+      <a href="images/gallery/cut3.jpg"><img src="images/gallery/cut3.jpg" alt="Beard shape-up" /></a>
+      <a href="images/gallery/cut4.jpg"><img src="images/gallery/cut4.jpg" alt="Mid fade" /></a>
+      <a href="images/gallery/cut5.jpg"><img src="images/gallery/cut5.jpg" alt="Crop with fringe" /></a>
+      <a href="images/gallery/cut6.jpg"><img src="images/gallery/cut6.jpg" alt="Taper fade" /></a>
+    </div>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <!-- Lightbox modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <img id="lightboxImg" alt="" />
+    <p id="lightboxCaption" class="muted"></p>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Simple lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbCap = document.getElementById('lightboxCaption');
+    const lbClose = document.getElementById('lightboxClose');
+
+    document.getElementById('gallery')?.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (!a) return;
+      e.preventDefault();
+      lbImg.src = a.getAttribute('href');
+      lbImg.alt = a.querySelector('img')?.alt || '';
+      lbCap.textContent = a.querySelector('img')?.alt || '';
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+    });
+
+    function closeLb(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+    }
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLb(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLb(); });
+  </script>
+</body>
+</html>
