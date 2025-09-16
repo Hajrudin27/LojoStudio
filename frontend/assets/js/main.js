@@ -11,12 +11,12 @@ document.getElementById('navToggle')?.addEventListener('click', () => {
   async function includePartials() {
     const headerHTML = `
       <header class="site-header">
-        <a class="logo" href="index.html">Lojo<span>Barbers</span></a>
+        <a class="logo" href="index.html">Lojo<span>Studio</span></a>
         <button id="navToggle" class="nav-toggle" aria-label="Menu">☰</button>
         <nav id="siteNav" class="nav">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="gallery.html">Gallery</a>
+          <a href="index.html">Hjem</a>
+          <a href="services.html">Tjenester</a>
+          <a href="gallery.html">Galleri</a>
           <a href="booking.html">Booking</a>
           <a href="contact.html">Contact</a>
         </nav>
@@ -24,7 +24,7 @@ document.getElementById('navToggle')?.addEventListener('click', () => {
     const footerHTML = `
       <footer class="site-footer">
         <div class="container">
-          <p>© <span id="year"></span> Lojo Barbers. All rights reserved.</p>
+          <p>© <span id="year"></span> Lojo Studio. Alle rettigheder forbeholdes.</p>
           <div class="social">
             <a href="#">Instagram</a>
             <a href="#">Facebook</a>
