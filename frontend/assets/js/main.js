@@ -18,7 +18,6 @@ document.getElementById('navToggle')?.addEventListener('click', () => {
           <a href="services.html">Tjenester</a>
           <a href="gallery.html">Galleri</a>
           <a href="booking.html">Booking</a>
-          <a href="contact.html">Contact</a>
         </nav>
       </header>`;
     const footerHTML = `
